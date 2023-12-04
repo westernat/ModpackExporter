@@ -1,0 +1,46 @@
+{
+    "name": "Endfall Pupil",
+    "status": "alpha",
+    "author": "Westernat | Cake_GR | Thestart211",
+    "main-path": "D:\\Minecraft\\instances\\Endfall Pupil\\.minecraft",
+    "require": [
+        "config/*",
+        "defaultconfigs/*",
+        "kubejs/config/client.properties",
+        "kubejs/assets/*",
+        "kubejs/client_scripts/*",
+        "kubejs/data/*",
+        "kubejs/server_scripts/*",
+        "kubejs/startup_scripts/*",
+        "shaderpacks/*"
+    ],
+    "mods$blacklist": [
+        "[DEV]CMDCam_FORGE_v2.0.16_mc1.18.2.jar",
+        "[DEV]CreativeCore_FORGE_v2.6.17_mc1.18.2.jar",
+        "[DEV]probejs-4.0.0-fix4-forge.jar"
+    ],
+    "mods$client-side": [
+        "3dskinlayers-forge-1.5.2-mc1.18.2.jar",
+        "BetterF3-3.0.0-Forge-1.18.2.jar",
+        "effective_fg-1.2.4.jar",
+        "entityculling-forge-1.6.1-mc1.18.2.jar",
+        "I18nUpdateMod-3.5.2-all.jar",
+        "jecharacters-1.18.2-4.3.13.jar",
+        "JustEnoughResources-1.18.2-0.14.2.206.jar",
+        "LegendaryTooltips-1.18.2-1.3.1.jar",
+        "modelfix-1.8.jar",
+        "MouseTweaks-forge-mc1.18-2.22.jar",
+        "NekosEnchantedBooks-1.18.2-1.8.0.jar",
+        "NonConflictKeys-Forge-1.18.X-1.0.0.jar",
+        "oculus-flywheel-compat-1.18.2-0.2.1.jar",
+        "oculus-mc1.18.2-1.6.4.jar",
+        "oculusparticlefix-1.0.jar",
+        "overloadedarmorbar-1.18.2-6.1.jar",
+        "Prism-1.18.2-1.0.1.jar",
+        "rubidium-0.5.6.jar",
+        "ShoulderSurfing-Forge-1.18.2-2.8.jar",
+        "shutupexperimentalsettings-1.0.5.jar",
+        "toughnessbar-1.18.2-7.jar"
+    ],
+    "server-only": false
+}
