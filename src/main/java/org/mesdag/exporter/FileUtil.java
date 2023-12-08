@@ -4,12 +4,14 @@ import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.reflect.TypeToken;
 
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
+import java.io.*;
+import java.nio.charset.StandardCharsets;
 import java.util.*;
 
 public class FileUtil {
+    private static final Gson gson = new GsonBuilder().setPrettyPrinting().create();
+    private static final String userDir = System.getProperty("user.dir") + File.separator;
+    public static final String outputDir = userDir + "output" + File.separator;
     public static final HashMap<String, Object> config;
 
     static {
@@ -24,9 +26,6 @@ public class FileUtil {
     private static final ArrayList<String> mods$blacklist = getFullPaths("mods$blacklist");
     private static final ArrayList<String> mods$client_side = getFullPaths("mods$client-side");
     public static final boolean server_only = (boolean) config.get("server-only");
-    private static final Gson gson = new GsonBuilder().setPrettyPrinting().create();
-    private static final String userDir = System.getProperty("user.dir") + File.separator;
-    public static final String outputDir = userDir + "output" + File.separator;
 
     private static ArrayList<String> getFullPaths(String key) {
         ArrayList<String> list = new ArrayList<>();
@@ -38,7 +37,7 @@ public class FileUtil {
 
     private static HashMap<String, Object> getConfig() throws FileNotFoundException {
         HashMap<String, Object> config;
-        try (FileReader reader = new FileReader(userDir + "exporter_config.json")) {
+        try (InputStreamReader reader = new InputStreamReader(new FileInputStream(userDir + "exporter_config.json"), StandardCharsets.UTF_8)) {
             config = gson.fromJson(reader, new TypeToken<HashMap<String, Object>>() {
             }.getType());
         } catch (Exception e) {
