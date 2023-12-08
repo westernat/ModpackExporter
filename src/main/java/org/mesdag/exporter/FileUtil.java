@@ -58,6 +58,7 @@ public class FileUtil {
         manifest.put("manifestType", "minecraftModpack");
         manifest.put("manifestVersion", 1);
         manifest.put("name", config.get("name"));
+        System.out.println(config.get("name"));
         manifest.put("version", config.get("version"));
         manifest.put("author", config.get("author"));
         manifest.put("overrides", "overrides");
@@ -115,7 +116,7 @@ public class FileUtil {
             }
             overrideFiles.addAll(getAllFiles(dir));
         }
-
+/*
         File modsDir = new File(main_path + "mods");
         File[] mods = modsDir.listFiles();
         if (mods != null) {
@@ -128,7 +129,7 @@ public class FileUtil {
                 }
             }
         }
-
+*/
         return overrideFiles;
     }
 }

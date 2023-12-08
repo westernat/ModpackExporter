@@ -1,6 +1,7 @@
 package org.mesdag.exporter;
 
 import java.io.*;
+import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipOutputStream;
@@ -12,7 +13,7 @@ public class Main {
         File manifestFile = new File(outputDir + "manifest.json");
         File parentDir = manifestFile.getParentFile();
         if (!parentDir.exists()) parentDir.mkdirs();
-        try (FileWriter writer = new FileWriter(manifestFile)) {
+        try (OutputStreamWriter writer = new OutputStreamWriter(new FileOutputStream(manifestFile), StandardCharsets.UTF_8);) {
             writer.write(getManifest());
         }
         File zip = new File(outputDir + config.get("name") + (server_only ? "[Server]" : "") + "-" + config.get("version") + ".zip");
